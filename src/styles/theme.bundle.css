@@ -16416,20 +16416,20 @@ html {
 @font-face {
   font-family: HKGroteskPro;
   font-weight: 400;
-  src: url("./static/fonts/Hk-Grotesk-Pro/HKGroteskPro-Regular.woff2") format("woff2"),
-    url("./static/fonts/Hk-Grotesk-Pro/HKGroteskPro-Regular.woff") format("woff");
+  src: url("/static/fonts/Hk-Grotesk-Pro/HKGroteskPro-Regular.woff2") format("woff2"),
+    url("/static/fonts/Hk-Grotesk-Pro/HKGroteskPro-Regular.woff") format("woff");
 }
 @font-face {
   font-family: HKGroteskPro;
   font-weight: 600;
-  src: url("./static/fonts/Hk-Grotesk-Pro/HKGroteskPro-Medium.woff2") format("woff2"),
-    url("./static/fonts/Hk-Grotesk-Pro/HKGroteskPro-Medium.woff") format("woff");
+  src: url("/static/fonts/Hk-Grotesk-Pro/HKGroteskPro-Medium.woff2") format("woff2"),
+    url("/static/fonts/Hk-Grotesk-Pro/HKGroteskPro-Medium.woff") format("woff");
 }
 @font-face {
   font-family: Feather;
-  src: url("./static/fonts/Feather/Feather.ttf?sdxovp") format("truetype"),
-    url("./static/fonts/Feather/Feather.woff?sdxovp") format("woff"),
-    url("./static/fonts/Feather/Feather.svg?sdxovp#Feather") format("svg");
+  src: url("/static/fonts/Feather/Feather.ttf?sdxovp") format("truetype"),
+    url("/static/fonts/Feather/Feather.woff?sdxovp") format("woff"),
+    url("/static/fonts/Feather/Feather.svg?sdxovp#Feather") format("svg");
   font-weight: 400;
   font-style: normal;
 }
@@ -17952,9 +17952,9 @@ a.card:hover {
   position: absolute;
   width: 0;
   height: 0;
-  background-image: url(./static/img/masks/avatar-status.svg),
-    url(./static/img/masks/avatar-group.svg), url(./static/img/masks/avatar-group-hover.svg),
-    url(./static/img/masks/avatar-group-hover-last.svg);
+  background-image: url(/static/img/masks/avatar-status.svg),
+    url(/static/img/masks/avatar-group.svg), url(/static/img/masks/avatar-group-hover.svg),
+    url(/static/img/masks/avatar-group-hover-last.svg);
 }
 .avatar-img {
   width: 100%;
@@ -17983,8 +17983,8 @@ a.card:hover {
 }
 .avatar-offline .avatar-img,
 .avatar-online .avatar-img {
-  -webkit-mask-image: url(./static/img/masks/avatar-status.svg);
-  mask-image: url(./static/img/masks/avatar-status.svg);
+  -webkit-mask-image: url(/static/img/masks/avatar-status.svg);
+  mask-image: url(/static/img/masks/avatar-status.svg);
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
 }
@@ -18069,8 +18069,8 @@ a.card:hover {
   margin-left: -1.25rem;
 }
 .avatar-group .avatar:not(:last-child) {
-  -webkit-mask-image: url(./static/img/masks/avatar-group.svg);
-  mask-image: url(./static/img/masks/avatar-group.svg);
+  -webkit-mask-image: url(/static/img/masks/avatar-group.svg);
+  mask-image: url(/static/img/masks/avatar-group.svg);
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
 }
@@ -18080,14 +18080,14 @@ a.card:hover {
   z-index: 1;
 }
 .avatar-group .avatar:hover + .avatar {
-  -webkit-mask-image: url(./static/img/masks/avatar-group-hover.svg);
-  mask-image: url(./static/img/masks/avatar-group-hover.svg);
+  -webkit-mask-image: url(/static/img/masks/avatar-group-hover.svg);
+  mask-image: url(/static/img/masks/avatar-group-hover.svg);
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
 }
 .avatar-group .avatar:hover + .avatar:last-child {
-  -webkit-mask-image: url(./static/img/masks/avatar-group-hover-last.svg);
-  mask-image: url(./static/img/masks/avatar-group-hover-last.svg);
+  -webkit-mask-image: url(/static/img/masks/avatar-group-hover-last.svg);
+  mask-image: url(/static/img/masks/avatar-group-hover-last.svg);
 }
 .collapse-chevron {
   display: inline-block;
