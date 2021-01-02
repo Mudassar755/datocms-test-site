@@ -9,7 +9,7 @@ const Home = ({ data: { about } }) => {
   console.log("about", about)
   return (
     <Layout>
-      <section id="sectionone" class="pt-12 pt-md-14 pb-12 pb-md-15 overlay overlay-black overlay-60 bg-cover jarallax" data-jarallax data-speed=".8" style={{ backgroundImage: `url(/static/img/covers/cover-19.jpg)` }}>
+      <section id="sectionone" class="pt-12 pt-md-14 pb-12 pb-md-15 overlay overlay-black overlay-60 bg-cover jarallax" data-jarallax data-speed=".8" style={{ backgroundImage: `url(./static/img/covers/cover-19.jpg)` }}>
         <div class="container">
 
           <div class="row justify-content-center">
@@ -56,7 +56,7 @@ const Home = ({ data: { about } }) => {
                      {about.para1}
                     </p>
                   </div>
-                  <img src="/static/img/photos/photo-32.jpg" width="100%" />
+                  <img src="./static/img/photos/photo-32.jpg" width="100%" />
                 </div>
                 <div class="col-12 col-md-6 col-xl-5 mr-11">
                   <div>
@@ -261,7 +261,7 @@ const Home = ({ data: { about } }) => {
         </div>
       </section>
 
-      <section class="pt-12 pt-md-8 pb-5 pb-md-8 overlay overlay-black overlay-60 bg-cover jarallax" data-jarallax data-speed=".8" style={{ backgroundImage: `url(/static/img/covers/cover-3.jpg)` }}>
+      <section class="pt-12 pt-md-8 pb-5 pb-md-8 overlay overlay-black overlay-60 bg-cover jarallax" data-jarallax data-speed=".8" style={{ backgroundImage: `url(./static/img/covers/cover-3.jpg)` }}>
         <div class="container">
 
           <div class="row justify-content-start">
@@ -297,7 +297,7 @@ const Home = ({ data: { about } }) => {
               </p>
             </div>
             <div class="col-12 col-md-12 col-lg-12">
-              <img src='/static/img/photos/photo-31.jpg' className="w-100" />
+              <img src='./static/img/photos/photo-31.jpg' className="w-100" />
             </div>
           </div>
         </div>
@@ -308,7 +308,7 @@ const Home = ({ data: { about } }) => {
             <div class="col-12">
               <div class="row justify-content-between mb-8 mb-md-11">
                 <div class="col-12 col-md-6">
-                  <img src="/static/img/map.png" width="100%" />
+                  <img src="./static/img/map.png" width="100%" />
                 </div>
                 <div class="col-12 col-md-4 col-xl-4 mr-14">
                   <div>
@@ -375,7 +375,7 @@ const Home = ({ data: { about } }) => {
             <div class="col-12 col-md-6 col-lg-3 text-center" >
 
               <div class="icon icon-lg mb-4">
-                <img src="/static/img/brands/logomark/slack.svg" width="50" />
+                <img src="./static/img/brands/logomark/slack.svg" width="50" />
               </div>
 
               <h3 class="font-weight-bold">
@@ -390,7 +390,7 @@ const Home = ({ data: { about } }) => {
             <div class="col-12 col-md-6 col-lg-3 text-center" >
 
               <div class="icon icon-lg mb-4">
-                <img src="/static/img/brands/logomark/mailchimp.svg" width="50" />
+                <img src="./static/img/brands/logomark/mailchimp.svg" width="50" />
                 {/* {{> logomark/mailchimp}} */}
               </div>
 
@@ -406,7 +406,7 @@ const Home = ({ data: { about } }) => {
             <div class="col-12 col-md-6 col-lg-3 text-center" >
 
               <div class="icon icon-lg mb-4">
-                <img src="/static/img/brands/logomark/dropbox.svg" width="50" />
+                <img src="./static/img/brands/logomark/dropbox.svg" width="50" />
                 {/* {{> logomark/dropbox}} */}
               </div>
 
@@ -422,7 +422,7 @@ const Home = ({ data: { about } }) => {
             <div class="col-12 col-md-6 col-lg-3 text-center" >
 
               <div class="icon icon-lg mb-4">
-                <img src="/static/img/brands/logomark/google-drive.svg" width="50" />
+                <img src="./static/img/brands/logomark/google-drive.svg" width="50" />
                 {/* {{> logomark/google-drive}} */}
               </div>
 
@@ -438,7 +438,7 @@ const Home = ({ data: { about } }) => {
             <div class="col-12 col-md-6 col-lg-3 text-center" >
 
               <div class="icon icon-lg mb-4">
-                <img src="/static/img/brands/logomark/google-ad-manager.svg" width="50" />
+                <img src="./static/img/brands/logomark/google-ad-manager.svg" width="50" />
                 {/* {{> logomark/google-ad-manager}} */}
               </div>
 
@@ -454,7 +454,7 @@ const Home = ({ data: { about } }) => {
             <div class="col-12 col-md-6 col-lg-3 text-center" >
 
               <div class="icon icon-lg mb-4">
-                <img src="/static/img/brands/logomark/atlassian.svg" width="50" />
+                <img src="./static/img/brands/logomark/atlassian.svg" width="50" />
                 {/* {{> logomark/atlassian}} */}
               </div>
 
@@ -470,7 +470,7 @@ const Home = ({ data: { about } }) => {
             <div class="col-12 col-md-6 col-lg-3 text-center" >
 
               <div class="icon icon-lg mb-4">
-                <img src="/static/img/brands/logomark/atlassian.svg" width="50" />
+                <img src="./static/img/brands/logomark/atlassian.svg" width="50" />
                 {/* {{> logomark/atlassian}} */}
               </div>
 
@@ -486,7 +486,7 @@ const Home = ({ data: { about } }) => {
             <div class="col-12 col-md-6 col-lg-3 text-center" >
 
               <div class="icon icon-lg mb-4">
-                <img src="/static/img/brands/logomark/atlassian.svg" width="50" />
+                <img src="./static/img/brands/logomark/atlassian.svg" width="50" />
                 {/* {{> logomark/atlassian}} */}
               </div>
 
@@ -518,7 +518,7 @@ const Home = ({ data: { about } }) => {
                 <div class="row">
                   <div class="col-md-4 position-relative">
 
-                    <img src="/static/img/illustrations/illustration-2.png" class="h-75 position-absolute right-0 mt-6" alt="..." />
+                    <img src="./static/img/illustrations/illustration-2.png" class="h-75 position-absolute right-0 mt-6" alt="..." />
 
                   </div>
                   <div class="col-md-5">
@@ -551,7 +551,7 @@ const Home = ({ data: { about } }) => {
                 <div class="row">
                   <div class="col-md-4 position-relative">
 
-                    <img src="/static/img/illustrations/illustration-2.png" class="h-75 position-absolute right-0 mt-6" alt="..." />
+                    <img src="./static/img/illustrations/illustration-2.png" class="h-75 position-absolute right-0 mt-6" alt="..." />
 
                   </div>
                   <div class="col-md-5">
@@ -584,7 +584,7 @@ const Home = ({ data: { about } }) => {
                 <div class="row">
                   <div class="col-md-4 position-relative">
 
-                    <img src="/static/img/illustrations/illustration-2.png" class="h-75 position-absolute right-0 mt-6" alt="..." />
+                    <img src="./static/img/illustrations/illustration-2.png" class="h-75 position-absolute right-0 mt-6" alt="..." />
 
                   </div>
                   <div class="col-md-5">
@@ -617,7 +617,7 @@ const Home = ({ data: { about } }) => {
                 <div class="row">
                   <div class="col-md-4 position-relative">
 
-                    <img src="/static/img/illustrations/illustration-2.png" class="h-75 position-absolute right-0 mt-6" alt="..." />
+                    <img src="./static/img/illustrations/illustration-2.png" class="h-75 position-absolute right-0 mt-6" alt="..." />
 
                   </div>
                   <div class="col-md-5">
@@ -650,7 +650,7 @@ const Home = ({ data: { about } }) => {
                 <div class="row">
                   <div class="col-md-4 position-relative">
 
-                    <img src="/static/img/illustrations/illustration-2.png" class="h-75 position-absolute right-0 mt-6" alt="..." />
+                    <img src="./static/img/illustrations/illustration-2.png" class="h-75 position-absolute right-0 mt-6" alt="..." />
 
                   </div>
                   <div class="col-md-5">
@@ -683,7 +683,7 @@ const Home = ({ data: { about } }) => {
                 <div class="row">
                   <div class="col-md-4 position-relative">
 
-                    <img src="/static/img/illustrations/illustration-2.png" class="h-75 position-absolute right-0 mt-6" alt="..." />
+                    <img src="./static/img/illustrations/illustration-2.png" class="h-75 position-absolute right-0 mt-6" alt="..." />
 
                   </div>
                   <div class="col-md-5">
