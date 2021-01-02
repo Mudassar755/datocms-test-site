@@ -2,8 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
 import Img from 'gatsby-image'
-import coverImg from '../assets/img/portfolio-cover-1.jpg';
-import larq from '../../public/static/img/brands/larq.svg'
 import Layout from "../components/layout"
 import '../styles/theme.bundle.css'
 
