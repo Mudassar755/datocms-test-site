@@ -12,7 +12,7 @@ const TemplateWrapper = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white border-bottom">
+    <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
 
   

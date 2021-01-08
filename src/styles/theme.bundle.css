@@ -8166,6 +8166,9 @@ button.close {
 .bg-white {
   background-color: #fff !important;
 }
+.bg-cyan {
+  background-color: var(--bs-cyan) !important;
+}
 .bg-white-20 {
   background-color: hsla(0, 0%, 100%, 0.2) !important;
 }

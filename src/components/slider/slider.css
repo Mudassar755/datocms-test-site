@@ -1,0 +1,53 @@
+.slider-col {
+  position: absolute;
+  z-index: 100;
+  top: 30%;
+}
+.slider-container {
+  height: 250px !important;
+    width: 400px !important;
+}
+.slider_btn {
+  margin-right: 10px;
+  border-radius: 20px;
+  height: 30px;
+  line-height: 0.5;
+  padding: 0.375rem 1rem;
+  background: #ffffff;
+  margin-right: 10px;
+}
+.slider {
+  text-align: center;
+}
+
+.slick-next {
+  top: 300px;
+    right: 22% !important;
+    z-index: 10 !important;
+    width: 40px;
+    height: 40px;
+}
+.slick-prev {
+  top: 300px;
+  left: 71% !important;
+  z-index: 10 !important;
+  width: 40px;
+    height: 40px;
+}
+
+@media screen and (min-width: 769px) {
+  .choose-ctg {
+    margin-left: -220px;
+    margin-right: 20px;
+  }
+}
+
+.next_btn {
+  width: 30px;
+  height: 30px;
+}
+.prev_btn {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}

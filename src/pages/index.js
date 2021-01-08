@@ -1,38 +1,57 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { graphql } from 'gatsby'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
 import Img from 'gatsby-image'
+import Flickity from 'react-flickity-component'
 import Layout from "../components/layout"
 import cover_top from '../assets/img/covers/cover-19.jpg'
 import cover3 from '../assets/img/covers/cover-3.jpg'
+import Slider from '../components/slider'
+import AOS from 'aos';
+import "aos/dist/aos.css";
 import '../styles/theme.bundle.css'
+import 'flickity/dist/flickity.min.css';
 
+const flickityOptions = {
+  initialIndex: 2,
+  groupCells:true,
+  groupCells: 3
+}
 const Home = ({ data: { about } }) => {
+  useEffect(() => {
+    AOS.init({
+        offset: 200,
+        duration: 600,
+        easing: 'ease-in-sine',
+        delay: 100,
+    });
+    AOS.refresh();
+}, [])
   console.log("about", about)
   return (
     <Layout>
-      <section id="sectionone" class="pt-12 pt-md-14 pb-12 pb-md-15 overlay overlay-black overlay-60 bg-cover jarallax" data-jarallax data-speed=".8" style={{ backgroundImage: `url(${cover_top})` }}>
+      <section id="sectionone" class="pt-12 pt-md-14 pb-12 pb-md-15 overlay bg-cover jarallax" data-jarallax data-speed=".8" style={{ backgroundImage: `url(${cover_top})` }}>
         <div class="container">
 
-          <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-7 text-center">
+          <div class="row justify-content-start" >
+            <div class="col-12 col-md-10 col-lg-7">
 
 
-              <h1 class="display-2 font-weight-bold text-white">
+              <h1 class="display-2 font-weight-bold text-white" data-aos="fade-right">
                 Our Work.
             </h1>
 
 
-              <p class="lead text-white-75 mb-4">
+              <p class="lead text-white-75 mb-4" data-aos="fade-right" data-aos-delay="100">
                 We design & build products, tools, apps, and sites for companies trying to do great things for our planet.
             </p>
 
 
-              <nav class="nav justify-content-center">
-                <a class="badge rounded-pill bg-white-soft active mr-1 mb-1" href="#" data-toggle="pill" data-filter="*" data-target="#portfolio">
+              <nav class="nav justify-content-start" data-aos="fade-right" data-aos-delay="100">
+                <a class="btn bg-cyan text-white rounded-pill active mr-1 mb-1" href="#" data-toggle="pill" data-filter="*" data-target="#portfolio">
                   <span class="h6 text-uppercase">Left Button</span>
                 </a>
-                <a class="badge rounded-pill bg-white-soft mr-1 mb-1" href="#" data-toggle="pill" data-filter=".product" data-target="#portfolio">
+                <a class="btn bg-white rounded-pill mr-1 mb-1" href="#" data-toggle="pill" data-filter=".product" data-target="#portfolio">
                   <span class="h6 text-uppercase">Right Button</span>
                 </a>
                
@@ -45,11 +64,11 @@ const Home = ({ data: { about } }) => {
 
       <section id="sectiontwo">
         <div class="container-fluid d-flex flex-row pl-0">
-          <div class="row min-vh-100 py-8 py-md-11">
+          <div class="row min-vh-100 py-3 py-md-5">
             <div class="col-12">
-              <div class="row justify-content-between mb-8 mb-md-11">
+              <div class="row justify-content-between mb-3 mb-md-5">
                 <div class="col-12 col-md-6">
-                  <div class="ml-13 mb-8">
+                  <div class="ml-13 mb-8" data-aos="fade-right">
                     <h2>
                      {about.sectiontitle}
                     </h2>
@@ -58,21 +77,21 @@ const Home = ({ data: { about } }) => {
                      {about.para1}
                     </p>
                   </div>
-                  <img src={require('../assets/img/photos/photo-32.jpg')} width="100%" />
+                  <img src={require('../assets/img/photos/photo-32.jpg')} width="100%" data-aos="fade-right" data-aos-delay="100" />
                 </div>
                 <div class="col-12 col-md-6 col-xl-5 mr-11">
-                  <div>
+                  <div data-aos="fade-left">
 
                     <p class="small mb-6 mb-md-0">
                {about.para2}
                 </p>
                   </div>
-                  <div class="bg-gray-200 d-flex justify-content-center align-items-center" style={{height:'300px'}}>
+                  <div class="bg-gray-200 d-flex justify-content-center align-items-center" style={{height:'300px'}} data-aos="fade-left" data-aos-delay="100">
                     <h1 class="text-center font-weight-bold"><span style={{fontSize:'5em'}}>14</span> <br />
                     Heading Section
                     </h1>
                   </div>
-                  <div>
+                  <div data-aos="fade-left" data-aos-delay="200">
                     <p class="small mb-6 mb-md-0">
                      {about.para3}
                 </p><br />
@@ -94,174 +113,106 @@ const Home = ({ data: { about } }) => {
         </div>
       </section>
 
-      <section className="mb-8">
-        <div className="container">
-          <div class="row">
-            <div class="col-12 col-md-6 col-lg-4">
+      <section class="py-4 py-md-5 mb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-4 text-center" data-aos="fade-up">
 
-              <div class="card card-border border-primary shadow-lg mb-6 mb-md-8 lift lift-lg">
-                <div class="card-body text-center">
+            <div class="icon text-primary mb-3">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M7 3h10a4 4 0 110 8H7a4 4 0 110-8zm0 6a2 2 0 100-4 2 2 0 000 4z" fill="#335EEA"/><path d="M7 13h10a4 4 0 110 8H7a4 4 0 110-8zm10 6a2 2 0 100-4 2 2 0 000 4z" fill="#335EEA" opacity=".3"/></g></svg>            </div>
+          
+            <h3>
+              Built for developers
+            </h3>
+         
+            <p class="text-muted mb-6 mb-md-0">
+              Landkit is built to make your life easier. Variables, build tooling, documentation, and reusable components.
+            </p>
 
-                  <div class="icon-circle bg-primary text-white mb-5">
-                    <i class="fe fe-users"></i>
-                  </div>
+          </div>
+          <div class="col-12 col-md-4 text-center" data-aos="fade-up" data-aos-delay="50">
 
-                  <h4 class="font-weight-bold">
-                    Account
-                        </h4>
+            
+            <div class="icon text-primary mb-3">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.5 4h4A1.5 1.5 0 0111 5.5v1A1.5 1.5 0 019.5 8h-4A1.5 1.5 0 014 6.5v-1A1.5 1.5 0 015.5 4zm9 12h4a1.5 1.5 0 011.5 1.5v1a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-1a1.5 1.5 0 011.5-1.5z" fill="#335EEA"/><path d="M5.5 10h4a1.5 1.5 0 011.5 1.5v7A1.5 1.5 0 019.5 20h-4A1.5 1.5 0 014 18.5v-7A1.5 1.5 0 015.5 10zm9-6h4A1.5 1.5 0 0120 5.5v7a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-7A1.5 1.5 0 0114.5 4z" fill="#335EEA" opacity=".3"/></g></svg>            </div>
 
-                  <p class="text-gray-700 mb-5">
-                    Issues related to logging in, out, or about multiple devices.
-                        </p>
+            
+            <h3>
+              Designed to be modern
+            </h3>
 
-                  <span class="badge rounded-pill bg-dark-soft">
-                    <span class="h6 text-uppercase">
-                      21 entries
-                          </span>
-                  </span>
+            
+            <p class="text-muted mb-6 mb-md-0">
+              Designed with the latest design trends in mind. Landkit feels modern, minimal, and beautiful.
+            </p>
 
-                </div>
-              </div>
+          </div>
+          <div class="col-12 col-md-4 text-center" data-aos="fade-up" data-aos-delay="100">
 
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
+          
+            <div class="icon text-primary mb-3">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M17.272 8.685a1 1 0 111.456-1.37l4 4.25a1 1 0 010 1.37l-4 4.25a1 1 0 01-1.456-1.37l3.355-3.565-3.355-3.565zm-10.544 0L3.373 12.25l3.355 3.565a1 1 0 01-1.456 1.37l-4-4.25a1 1 0 010-1.37l4-4.25a1 1 0 011.456 1.37z" fill="#335EEA"/><rect fill="#335EEA" opacity=".3" transform="rotate(15 12 12)" x="11" y="4" width="2" height="16" rx="1"/></g></svg>            </div>
 
-              <div class="card card-border border-success shadow-lg mb-6 mb-md-8 lift lift-lg">
-                <div class="card-body text-center">
+            <h3>
+              Documentation for everything
+            </h3>
 
-                  <div class="icon-circle bg-success text-white mb-5">
-                    <i class="fe fe-clock"></i>
-                  </div>
+            <p class="text-muted mb-0">
+              We've written extensive documentation for components and tools, so you never have to reverse engineer anything.
+            </p>
 
-                  <h4 class="font-weight-bold">
-                    Integrations
-                        </h4>
-
-                  <p class="text-gray-700 mb-5">
-                    Connecting with 3rd party apps to exchange data.
-                        </p>
-
-                  <span class="badge rounded-pill bg-dark-soft">
-                    <span class="h6 text-uppercase">
-                      9 entries
-                          </span>
-                  </span>
-
-                </div>
-              </div>
-
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-
-              <div class="card card-border border-warning shadow-lg mb-6 mb-md-8 lift lift-lg">
-                <div class="card-body text-center">
-
-                  <div class="icon-circle bg-warning text-white mb-5">
-                    <i class="fe fe-users"></i>
-                  </div>
-
-                  <h4 class="font-weight-bold">
-                    Billing
-                        </h4>
-
-                  <p class="text-gray-700 mb-5">
-                    Issues with payments or invoicing.
-                        </p>
-
-                  <span class="badge rounded-pill bg-dark-soft">
-                    <span class="h6 text-uppercase">
-                      14 entries
-                        </span>
-                  </span>
-
-                </div>
-              </div>
-
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-
-              <div class="card card-border border-dark shadow-lg mb-6 mb-md-8 mb-lg-0 lift lift-lg">
-                <div class="card-body text-center">
-
-                  <div class="icon-circle bg-dark text-white mb-5">
-                    <i class="fe fe-users"></i>
-                  </div>
-
-                  <h4 class="font-weight-bold">
-                    Organizations
-                        </h4>
-
-                  <p class="text-gray-700 mb-5">
-                    Setting up and managing collections of users.
-                        </p>
-
-                  <span class="badge rounded-pill bg-dark-soft">
-                    <span class="h6 text-uppercase">
-                      17 entries
-                          </span>
-                  </span>
-
-                </div>
-              </div>
-
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-
-              <div class="card card-border border-primary-desat shadow-lg mb-6 mb-md-0 lift lift-lg">
-                <div class="card-body text-center">
-
-                  <div class="icon-circle bg-primary-desat text-white mb-5">
-                    <i class="fe fe-users"></i>
-                  </div>
-
-                  <h4 class="font-weight-bold">
-                    Performance
-                        </h4>
-
-                  <p class="text-gray-700 mb-5">
-                    Improving your system's speed and reliability.
-                        </p>
-
-                  <span class="badge rounded-pill bg-dark-soft">
-                    <span class="h6 text-uppercase">
-                      7 entries
-                          </span>
-                  </span>
-
-                </div>
-              </div>
-
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-
-              <div class="card card-border border-danger shadow-lg lift lift-lg">
-                <div class="card-body text-center">
-
-                  <div class="icon-circle bg-danger text-white mb-5">
-                    <i class="fe fe-users"></i>
-                  </div>
-
-                  <h4 class="font-weight-bold">
-                    Customizing
-                        </h4>
-
-                  <p class="text-gray-700 mb-5">
-                    Building custom modules on top of our platform.
-                        </p>
-
-                  <span class="badge rounded-pill bg-dark-soft">
-                    <span class="h6 text-uppercase">
-                      14 entries
-                          </span>
-                  </span>
-
-                </div>
-              </div>
-
-            </div>
           </div>
         </div>
-      </section>
+        <div class="row">
+          <div class="col-12 col-md-4 text-center" data-aos="fade-up">
+
+            <div class="icon text-primary mb-3">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M7 3h10a4 4 0 110 8H7a4 4 0 110-8zm0 6a2 2 0 100-4 2 2 0 000 4z" fill="#335EEA"/><path d="M7 13h10a4 4 0 110 8H7a4 4 0 110-8zm10 6a2 2 0 100-4 2 2 0 000 4z" fill="#335EEA" opacity=".3"/></g></svg>            </div>
+          
+            <h3>
+              Built for developers
+            </h3>
+         
+            <p class="text-muted mb-6 mb-md-0">
+              Landkit is built to make your life easier. Variables, build tooling, documentation, and reusable components.
+            </p>
+
+          </div>
+          <div class="col-12 col-md-4 text-center" data-aos="fade-up" data-aos-delay="50">
+
+            
+            <div class="icon text-primary mb-3">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.5 4h4A1.5 1.5 0 0111 5.5v1A1.5 1.5 0 019.5 8h-4A1.5 1.5 0 014 6.5v-1A1.5 1.5 0 015.5 4zm9 12h4a1.5 1.5 0 011.5 1.5v1a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-1a1.5 1.5 0 011.5-1.5z" fill="#335EEA"/><path d="M5.5 10h4a1.5 1.5 0 011.5 1.5v7A1.5 1.5 0 019.5 20h-4A1.5 1.5 0 014 18.5v-7A1.5 1.5 0 015.5 10zm9-6h4A1.5 1.5 0 0120 5.5v7a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-7A1.5 1.5 0 0114.5 4z" fill="#335EEA" opacity=".3"/></g></svg>            </div>
+
+            
+            <h3>
+              Designed to be modern
+            </h3>
+
+            
+            <p class="text-muted mb-6 mb-md-0">
+              Designed with the latest design trends in mind. Landkit feels modern, minimal, and beautiful.
+            </p>
+
+          </div>
+          <div class="col-12 col-md-4 text-center" data-aos="fade-up" data-aos-delay="100">
+
+          
+            <div class="icon text-primary mb-3">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M17.272 8.685a1 1 0 111.456-1.37l4 4.25a1 1 0 010 1.37l-4 4.25a1 1 0 01-1.456-1.37l3.355-3.565-3.355-3.565zm-10.544 0L3.373 12.25l3.355 3.565a1 1 0 01-1.456 1.37l-4-4.25a1 1 0 010-1.37l4-4.25a1 1 0 011.456 1.37z" fill="#335EEA"/><rect fill="#335EEA" opacity=".3" transform="rotate(15 12 12)" x="11" y="4" width="2" height="16" rx="1"/></g></svg>            </div>
+
+            <h3>
+              Documentation for everything
+            </h3>
+
+            <p class="text-muted mb-0">
+              We've written extensive documentation for components and tools, so you never have to reverse engineer anything.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </section>
 
       <section class="pt-12 pt-md-8 pb-5 pb-md-8 overlay overlay-black overlay-60 bg-cover jarallax" data-jarallax data-speed=".8" style={{ backgroundImage: `url(${cover3})` }}>
         <div class="container">
@@ -270,23 +221,37 @@ const Home = ({ data: { about } }) => {
             <div class="col-12 col-md-10 col-lg-7 text-left">
 
 
-              <h1 class="display-2 font-weight-bold text-white">
+              <h1 class="display-2 font-weight-bold text-white" data-aos="fade-right">
                 Our Work.
               </h1>
 
 
-              <p class="lead text-white-75 mb-4">
+              <p class="lead text-white-75 mb-4" data-aos="fade-right" data-aos-delay="100">
                 We design & build products, tools, apps, and sites for companies trying to do great things for our planet.
               </p>
             </div>
           </div>
+          {/* <Flickity
+      className={'carousel'} // default ''
+      elementType={'div'} // default 'div'
+      options={flickityOptions} // takes flickity options {}
+      disableImagesLoaded={false} // default false
+      reloadOnUpdate // default false
+      static // default false
+      >
+      <img src={require('../assets/img/photos/photo-1.jpg')}/>
+      <img src={require('../assets/img/photos/photo-2.jpg')}/>
+      <img src={require('../assets/img/photos/photo-3.jpg')}/>
+    </Flickity> */}
         </div>
+    <Slider />
       </section>
-      <section id="sectionthree" class="pt-12 pt-md-8 pb-5 pb-md-8">
+    {/* <div></div> */}
+      <section id="sectionthree" class="pt-12 mt-13 pt-md-8 pb-5 pb-md-8">
         <div class="container">
 
           <div class="row justify-content-start">
-            <div class="col-12 col-md-10 col-lg-7 text-left">
+            <div class="col-12 col-md-10 col-lg-7 text-left" data-aos="fade-up">
 
 
               <h1 class="display-2 font-weight-bold">
@@ -298,7 +263,7 @@ const Home = ({ data: { about } }) => {
                 We design & build products, tools, apps, and sites for companies trying to do great things for our planet.
               </p>
             </div>
-            <div class="col-12 col-md-12 col-lg-12">
+            <div class="col-12 col-md-12 col-lg-12" data-aos="fade-up" data-aos-delay="100">
               <img src={require('../assets/img/photos/photo-31.jpg')} className="w-100" />
             </div>
           </div>
@@ -308,11 +273,11 @@ const Home = ({ data: { about } }) => {
         <div class="container-fluid d-flex flex-row pl-0">
           <div class="row min-vh-100 py-3 py-md-5">
             <div class="col-12">
-              <div class="row justify-content-between mb-8 mb-md-11">
-                <div class="col-12 col-md-6">
+              <div class="row justify-content-between mb-3 mb-md-5">
+                <div class="col-12 col-md-6" data-aos="fade-right">
                   <img src={require('../assets/img/map.png')} width="100%" />
                 </div>
-                <div class="col-12 col-md-4 col-xl-4 mr-14">
+                <div class="col-12 col-md-4 col-xl-4 mr-14" data-aos="fade-left" data-aos-delay="100">
                   <div>
                     <h1 className="font-weight-bold">
                       Lokalizacja
@@ -337,14 +302,14 @@ const Home = ({ data: { about } }) => {
         <div class="container d-flex flex-row pl-0">
           <div class="row min-vh-100 p-2 py-md-3">
             <div class="col-12">
-              <div class="row justify-content-between mb-8 mb-md-11">
+              <div class="row justify-content-between mb-3 mb-md-5">
                 <div class="col-12 col-md-6">
                   <div>
-                    <h2 className="font-weight-bold">
+                    <h2 className="font-weight-bold" data-aos="fade-right" >
                       Lokalizacja
                     </h2>
 
-                    <p class="lead mb-6 mb-md-0">
+                    <p class="lead mb-6 mb-md-0" data-aos="fade-right" data-aos-delay="100">
                       We embed ourselves in your team and aim to work as a natural extension of your full-time team.
                       We embed ourselves in your team and aim to work as a natural extension of your full-time team.
                     </p>
@@ -353,12 +318,12 @@ const Home = ({ data: { about } }) => {
 
                 </div>
                 <div class="col-12 col-md-6 col-xl-6 pl-10">
-                  <div>
-                    <p class="mt-8 mb-6 mb-md-0">
+                  <div data-aos="fade-left" data-aos-delay="100">
+                    <p class="mt-4 mb-4 mb-md-0">
                       We embed ourselves in your team and aim to work as a natural extension of your full-time team.
                       We embed ourselves in your team and aim to work as a natural extension of your full-time team.
                     </p>
-                    <p class="mt-4 mb-6 mb-md-0">
+                    <p class="mt-4 mb-4 mb-md-0">
                       We embed ourselves in your team and aim to work as a natural extension of your full-time team.
                       We embed ourselves in your team and aim to work as a natural extension of your full-time team.
                     </p>
@@ -374,7 +339,7 @@ const Home = ({ data: { about } }) => {
         <div class="container">
 
           <div class="row">
-            <div class="col-12 col-md-6 col-lg-3 text-center" >
+            <div class="col-12 col-md-6 col-lg-3 text-center" data-aos="fade-up" data-aos-delay="100">
 
               <div class="icon icon-lg mb-4">
                 <img src={require('../assets/img/brands/logomark/slack.svg')} width="50" />
@@ -384,12 +349,12 @@ const Home = ({ data: { about } }) => {
                 Slack
             </h3>
 
-              <p class="small mb-8">
+              <p class="small">
                 Sync your team's work and activity to share automatically in a channel with a simple plugin.
             </p>
 
             </div>
-            <div class="col-12 col-md-6 col-lg-3 text-center" >
+            <div class="col-12 col-md-6 col-lg-3 text-center" data-aos="fade-up" data-aos-delay="100">
 
               <div class="icon icon-lg mb-4">
                 <img src={require('../assets/img/brands/logomark/mailchimp.svg')} width="50" />
@@ -405,7 +370,7 @@ const Home = ({ data: { about } }) => {
             </p>
 
             </div>
-            <div class="col-12 col-md-6 col-lg-3 text-center" >
+            <div class="col-12 col-md-6 col-lg-3 text-center" data-aos="fade-up" data-aos-delay="100">
 
               <div class="icon icon-lg mb-4">
                 <img src={require('../assets/img/brands/logomark/dropbox.svg')} width="50" />
@@ -421,7 +386,7 @@ const Home = ({ data: { about } }) => {
             </p>
 
             </div>
-            <div class="col-12 col-md-6 col-lg-3 text-center" >
+            <div class="col-12 col-md-6 col-lg-3 text-center" data-aos="fade-up" data-aos-delay="100">
 
               <div class="icon icon-lg mb-4">
                 <img src={require('../assets/img/brands/logomark/google-drive.svg')} width="50" />
@@ -437,7 +402,7 @@ const Home = ({ data: { about } }) => {
             </p>
 
             </div>
-            <div class="col-12 col-md-6 col-lg-3 text-center" >
+            <div class="col-12 col-md-6 col-lg-3 text-center" data-aos="fade-up" data-aos-delay="100">
 
               <div class="icon icon-lg mb-4">
                 <img src={require('../assets/img/brands/logomark/google-ad-manager.svg')} width="50" />
@@ -453,7 +418,7 @@ const Home = ({ data: { about } }) => {
             </p>
 
             </div>
-            <div class="col-12 col-md-6 col-lg-3 text-center" >
+            <div class="col-12 col-md-6 col-lg-3 text-center" data-aos="fade-up" data-aos-delay="100">
 
               <div class="icon icon-lg mb-4">
                 <img src={require('../assets/img/brands/logomark/atlassian.svg')} width="50" />
@@ -469,7 +434,7 @@ const Home = ({ data: { about } }) => {
             </p>
 
             </div>
-            <div class="col-12 col-md-6 col-lg-3 text-center" >
+            <div class="col-12 col-md-6 col-lg-3 text-center" data-aos="fade-up" data-aos-delay="100">
 
               <div class="icon icon-lg mb-4">
                 <img src={require('../assets/img/brands/logomark/atlassian.svg')} width="50" />
@@ -485,7 +450,7 @@ const Home = ({ data: { about } }) => {
             </p>
 
             </div>
-            <div class="col-12 col-md-6 col-lg-3 text-center" >
+            <div class="col-12 col-md-6 col-lg-3 text-center" data-aos="fade-up" data-aos-delay="100">
 
               <div class="icon icon-lg mb-4">
                 <img src={require('../assets/img/brands/logomark/atlassian.svg')} width="50" />
@@ -516,7 +481,7 @@ const Home = ({ data: { about } }) => {
           <div class="row mt-5">
             <div class="col-12">
 
-              <div class="card shadow-light-lg overflow-hidden text-center text-lg-left bg-gray-200" >
+              <div class="card shadow-light-lg overflow-hidden text-center text-lg-left bg-gray-200" data-aos="fade-right" data-aos-delay="100">
                 <div class="row">
                   <div class="col-md-4 position-relative">
 
@@ -549,7 +514,7 @@ const Home = ({ data: { about } }) => {
           <div class="row mt-6">
             <div class="col-12">
 
-              <div class="card shadow-light-lg overflow-hidden text-center text-lg-left bg-gray-200" >
+              <div class="card shadow-light-lg overflow-hidden text-center text-lg-left bg-gray-200" data-aos="fade-right" data-aos-delay="100">
                 <div class="row">
                   <div class="col-md-4 position-relative">
 
@@ -582,7 +547,7 @@ const Home = ({ data: { about } }) => {
           <div class="row mt-6">
             <div class="col-12">
 
-              <div class="card shadow-light-lg overflow-hidden text-center text-lg-left bg-gray-200" >
+              <div class="card shadow-light-lg overflow-hidden text-center text-lg-left bg-gray-200" data-aos="fade-right" data-aos-delay="100">
                 <div class="row">
                   <div class="col-md-4 position-relative">
 
@@ -615,7 +580,7 @@ const Home = ({ data: { about } }) => {
           <div class="row mt-6">
             <div class="col-12">
 
-              <div class="card shadow-light-lg overflow-hidden text-center text-lg-left bg-gray-200" >
+              <div class="card shadow-light-lg overflow-hidden text-center text-lg-left bg-gray-200" data-aos="fade-right" data-aos-delay="100">
                 <div class="row">
                   <div class="col-md-4 position-relative">
 
@@ -648,7 +613,7 @@ const Home = ({ data: { about } }) => {
           <div class="row mt-6">
             <div class="col-12">
 
-              <div class="card shadow-light-lg overflow-hidden text-center text-lg-left bg-gray-200" >
+              <div class="card shadow-light-lg overflow-hidden text-center text-lg-left bg-gray-200" data-aos="fade-right" data-aos-delay="100">
                 <div class="row">
                   <div class="col-md-4 position-relative">
 
@@ -681,7 +646,7 @@ const Home = ({ data: { about } }) => {
           <div class="row mt-6">
             <div class="col-12">
 
-              <div class="card shadow-light-lg overflow-hidden text-center text-lg-left bg-gray-200" >
+              <div class="card shadow-light-lg overflow-hidden text-center text-lg-left bg-gray-200" data-aos="fade-right" data-aos-delay="100">
                 <div class="row">
                   <div class="col-md-4 position-relative">
 
@@ -729,24 +694,10 @@ const Home = ({ data: { about } }) => {
         </div>
       </section> */}
 
-      <article className="sheet">
+      {/* <article className="sheet">
         <h1 id="top">Top Page</h1>
-        {/* <HelmetDatoCms seo={about.seoMetaTags} />
-        <div className="sheet__inner">
-          <h1 className="sheet__title">{about.title}</h1>
-          <p className="sheet__lead">{about.subtitle}</p>
-          <div className="sheet__gallery">
-            <Img fluid={about.photo.fluid} />
-          </div>
-          <div
-            className="sheet__body"
-            dangerouslySetInnerHTML={{
-              __html: about.bioNode.childMarkdownRemark.html,
-            }}
-          />
-        </div> */}
         <a href="#top">page top</a>
-      </article>
+      </article> */}
        </Layout>
   )
 }
